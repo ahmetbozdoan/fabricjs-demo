@@ -1,0 +1,53 @@
+<html>
+<head>
+    <style>
+        body {
+            background-color: #bbb;
+        }
+
+		#drawing-mode-options{
+			position: absolute;
+			right: 0;
+			z-index: 999;
+		}
+    </style>
+</head>
+<body>
+	<button onclick='undo()'>Geri</button>
+	<button onclick='redo()'>İleri</button>
+	<button onclick='select()' style="margin-left:20px">Select</button>
+	<button onclick='startDraw()'>Draw</button>
+	<button onclick='circle()'>Circle</button>
+	<button onclick='triangle()'>Triangle</button>
+	<button onclick='text()'>Text</button>
+
+	<button onclick='startErase()' style="margin-left:20px">Silgi</button>
+	<button onclick='clearCanvas()'>Temizle</button>
+
+	<button onclick='saveCanvas()' style="margin-left:20px">Kaydet</button>
+	<button onclick='loadCanvas()'>Yükle</button>
+
+
+	<div id="drawing-mode-options" style="">
+		<label for="drawing-line-width">Line width:</label>
+		<span class="info">54</span><input type="range" value="30" min="0" max="150" id="drawing-line-width"><br>
+
+		<label for="drawing-color">Line color:</label>
+		<input type="color" value="#005E7A" id="drawing-color"><br>
+
+		<label for="drawing-shadow-color">Shadow color:</label>
+		<input type="color" value="#005E7A" id="drawing-shadow-color"><br>
+
+		<label for="drawing-shadow-width">Shadow width:</label>
+		<span class="info">26</span><input type="range" value="0" min="0" max="50" id="drawing-shadow-width"><br>
+
+		<label for="drawing-shadow-offset">Shadow offset:</label>
+		<span class="info">23</span><input type="range" value="0" min="0" max="50" id="drawing-shadow-offset"><br>
+	</div>
+
+	<canvas id="a" width="1000" height="800" style="border:solid 1px"></canvas>
+	<script src="fabric.min.js"></script>
+	<script src="fabric-history.js"></script>
+	<script src="main.js"></script>
+</body>
+</html>
